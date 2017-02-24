@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloWorldUpdated"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="250" Width="525">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="74*"/>
+            <ColumnDefinition Width="115*"/>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="128*"/>
+            <ColumnDefinition Width="175*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="69*"/>
+            <RowDefinition Height="31*"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="31*"/>
+            <RowDefinition Height="173*"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="uxSubmit" Content="Submit" Grid.Column="4" HorizontalAlignment="Left" Margin="27,2.667,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" Height="27" IsEnabled="False">
+            
+        </Button>
+
+        <Label x:Name="Password" Content="Password" Grid.Column="1" Margin="0,2.667,27,0" Grid.Row="3" VerticalAlignment="Top" Height="25" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="105"/>
+        <PasswordBox x:Name="uxPassword" PasswordChar="*" Grid.Column="3" HorizontalAlignment="Left" Height="20" Margin="0,1.333,0,0" Grid.Row="3" VerticalAlignment="Top" Width="120" PasswordChanged="uxPassword_PasswordChanged"/>
+        <Label x:Name="Namelabel" Content="User Name" Grid.Column="1" Margin="0,0.333,27,0" Grid.Row="1" VerticalAlignment="Top" Height="31" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="105"/>
+        <TextBox x:Name="uxName" Grid.Column="3" HorizontalAlignment="Left" Height="21" Margin="0,0.667,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="uxName_TextChanged" Grid.RowSpan="2"/>
+
     </Grid>
 </Window>

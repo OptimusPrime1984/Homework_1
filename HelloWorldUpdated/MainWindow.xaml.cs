@@ -20,9 +20,38 @@ namespace HelloWorldUpdated
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool isTextboxFilled = false;
+        bool isPasswordFilled = false;
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void uxName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (uxName.Text.Length > 0)
+            {
+                isTextboxFilled = true;
+            }
+            setButton();
+        }
+
+        private void uxPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (uxPassword.Password.Length > 0)
+            {
+                isPasswordFilled = true;
+            }
+            setButton();
+        }
+
+        private void setButton()
+        {
+            if(isPasswordFilled && isTextboxFilled)
+            {
+                uxSubmit.IsEnabled = true;
+            }
         }
     }
 }
