@@ -34,6 +34,10 @@ namespace HelloWorldUpdated
             {
                 isTextboxFilled = true;
             }
+            else
+            {
+                isPasswordFilled = false;
+            }
             setButton();
         }
 
@@ -43,14 +47,22 @@ namespace HelloWorldUpdated
             {
                 isPasswordFilled = true;
             }
+            else
+            {
+                isPasswordFilled = false;
+            }
             setButton();
         }
 
         private void setButton()
         {
-            if(isPasswordFilled && isTextboxFilled)
+            if (isPasswordFilled && isTextboxFilled)
             {
                 uxSubmit.IsEnabled = true;
+            }
+            else if (!isPasswordFilled || !isTextboxFilled)
+            {
+                uxSubmit.IsEnabled = false;
             }
         }
     }
